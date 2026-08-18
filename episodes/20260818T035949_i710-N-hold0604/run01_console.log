@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/chesonma/Downloads/RoamingOS/corridorbench/corridorbench/episode.py", line 285, in <module>
+    run(sys.argv[2], sys.argv[3], sys.argv[4])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/chesonma/Downloads/RoamingOS/corridorbench/corridorbench/episode.py", line 161, in run
+    res = adapter.run(spec, work, keep_outputs=True)
+  File "/Users/chesonma/Downloads/RoamingSim-Amptrans/la_network/calibration/stage0/sumo_adapter.py", line 124, in run
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        [os.path.join(self.venv, "sumo"), "-n", self.net,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+         "--no-step-log"],
+         ^^^^^^^^^^^^^^^^^
+        check=True, cwd=workdir, capture_output=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/Users/chesonma/Downloads/RoamingSim-Amptrans/demos/demo_d_sumo_twin/.venv/bin/sumo', '-n', '/Users/chesonma/Downloads/RoamingSim-Amptrans/demos/demo_d_sumo_twin/net/i710_twin.net.xml', '-r', '/Users/chesonma/Downloads/RoamingOS/corridorbench/episodes/20260818T035949_i710-N-hold0604/work_run01/routes_N.rou.xml,/Users/chesonma/Downloads/RoamingOS/corridorbench/episodes/20260818T035949_i710-N-hold0604/work_run01/routes_S.rou.xml', '-a', '/Users/chesonma/Downloads/RoamingOS/corridorbench/episodes/20260818T035949_i710-N-hold0604/work_run01/det.add.xml', '--begin', '0', '--end', '23400', '--statistic-output', '/Users/chesonma/Downloads/RoamingOS/corridorbench/episodes/20260818T035949_i710-N-hold0604/work_run01/stats.xml', '--log', '/Users/chesonma/Downloads/RoamingOS/corridorbench/episodes/20260818T035949_i710-N-hold0604/work_run01/sumo.log', '--no-step-log']' returned non-zero exit status 1.

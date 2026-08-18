@@ -157,7 +157,10 @@ def run(ep, params_path, day):
         raise SystemExit("guard: " + "; ".join(errs))
     adapter = SA.SumoAdapter()
     spec = H.build_boundary_spec(day, params, data)
-    work = os.path.join(ep, f"work_run{st['runs_used']:02d}")
+    # unique workdir per invocation: runs_used only increments on
+    # completion, so two concurrent calls would otherwise collide
+    work = os.path.join(ep, "work_run%02d_%s" % (
+        st["runs_used"], time.strftime("%H%M%S")))
     res = adapter.run(spec, work, keep_outputs=True)
     hits = guard.scan_workdir(work)
     if hits:
