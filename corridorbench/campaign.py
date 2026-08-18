@@ -76,6 +76,14 @@ def load_run(run_dir):
 
 
 def main(workers=2, only=None):
+    lock = os.path.join(paths.RESULTS, "campaign.lock")
+    if os.path.exists(lock):
+        raise SystemExit(f"another campaign holds {lock}; remove it only "
+                         "after verifying no sumo/jtrrouter processes")
+    os.makedirs(paths.RESULTS, exist_ok=True)
+    open(lock, "w").write(str(os.getpid()))
+    import atexit
+    atexit.register(lambda: os.path.exists(lock) and os.remove(lock))
     H, SA = paths.import_stage0()
     data = H.Data.load()
     adapter = SA.SumoAdapter()
