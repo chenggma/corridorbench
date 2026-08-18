@@ -4,3 +4,5 @@ __pycache__/
 results/campaign/*/work/
 episodes/*/work_*
 .env.paths
+results/sealed/work/
+episodes/*/work_*/
