@@ -56,3 +56,34 @@ def test_per_station_mean_geh_matches_frozen_csv(frozen_run, tasks_data):
             mean = sum(g.values()) / len(g)
             assert mean == pytest.approx(float(ref[st]["mean_geh"]),
                                          abs=0.06), st
+
+
+def test_cross_implementation_prop0(tasks_data):
+    """Fresh prop0 campaign run, scored by corridorbench, must match the
+    upstream Stage-0 study's independently-implemented per-station GEH
+    log (station_metrics_calibrated_2026-06-03.csv) within rounding.
+    Validates determinism AND scoring-implementation agreement."""
+    import csv as _csv
+    from corridorbench import campaign, metrics
+    run_dir = os.path.join(paths.RESULTS, "campaign", "prop0__2026-06-03")
+    if not os.path.exists(os.path.join(run_dir, "flow.csv")):
+        pytest.skip("prop0 campaign run not present")
+    _, data = tasks_data
+    sf, _ss = campaign.load_run(run_dir)
+    ref = {}
+    with open(os.path.join(paths.STAGE0,
+                           "station_metrics_calibrated_2026-06-03.csv")) as f:
+        for r in _csv.DictReader(f):
+            ref[(r["dir"], r["station"])] = r
+    n = 0
+    for d in "NS":
+        for st in data.interior_stations(d):
+            g = metrics.station_hour_geh(sf, data.obs_flow["2026-06-03"],
+                                         [st])
+            for h in range(5, 11):
+                theirs = ref.get((d, st), {}).get(f"geh_h{h:02d}")
+                if (st, h) not in g or theirs in (None, ""):
+                    continue
+                assert abs(g[(st, h)] - float(theirs)) < 0.05, (st, h)
+                n += 1
+    assert n >= 120
