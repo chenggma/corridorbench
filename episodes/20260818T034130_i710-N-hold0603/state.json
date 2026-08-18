@@ -1,0 +1,12 @@
+{
+  "episode": "20260818T034130_i710-N-hold0603",
+  "task_id": "i710-N-hold0603",
+  "budget": 6,
+  "runs_used": 0,
+  "runs": [],
+  "net_fingerprint": {
+    "net": "7319d852a5b3c588b9833edadf2246ca5a190e6168b015e8961f03b6797418b5",
+    "detectors": "ea3203dce97d0cad79d39ecfb4f82188a5ced3ade6cf34b9845079aa072f597f"
+  },
+  "started_utc": "2026-08-18T10:41:30Z"
+}
