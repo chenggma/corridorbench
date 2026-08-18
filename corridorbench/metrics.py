@@ -44,7 +44,9 @@ def hourly_flows(series_get, hour, t0_offset_s=1800):
     base = (hour - 4) * 3600 - t0_offset_s
     vals = [series_get(base + i * 300) for i in range(12)]
     vals = [v for v in vals if v is not None]
-    return (sum(vals), len(vals)) if vals else (None, 0)
+    if not vals:
+        return None, 0
+    return sum(vals) * 12.0 / len(vals), len(vals)
 
 
 def station_hour_geh(sim_flow, obs_flow, stations, hours=HOURS_OBJ):
@@ -121,8 +123,9 @@ def fhwa_2004_criteria(geh_by_sh, sim_flow, obs_flow, stations,
       B. Individual flows within 15% for 700 < flow < 2700 veh/h, > 85%
       C. Within 100 veh/h for flow < 700, > 85%
       D. Within 400 veh/h for flow > 2700, > 85%
-      E. Sum of all link flows within 5% of sum of counts
-      F. GEH < 4 for the sum of all link flows
+      E. Sum of all link flows within 5% of sum of counts (per hour;
+         worst hour reported, per-hour detail included)
+      F. GEH < 4 for the sum of all link flows (per hour; worst hour)
     Returns a dict of named results; each is (pass_bool, value).
     """
     hourly = {}
@@ -157,9 +160,25 @@ def fhwa_2004_criteria(geh_by_sh, sim_flow, obs_flow, stations,
     out["C_within100_low"] = (s is not None and s > 0.85, s)
     s = _share(highs, lambda m, c: abs(m - c) <= 400)
     out["D_within400_high"] = (s is not None and s > 0.85, s)
-    M = sum(m for m, _ in hourly.values())
-    C = sum(c for _, c in hourly.values())
-    out["E_sum_within5pct"] = (C > 0 and abs(M - C) / C <= 0.05,
-                               (M - C) / C if C else None)
-    out["F_sum_geh4"] = (geh(M, C) < 4 if C or M else True, geh(M, C))
+    # E/F: the Toolbox applies the sum-of-link-flows checks per time
+    # period. Computed per clock hour over the station sum; the reported
+    # value is the worst hour, and per-hour detail is included.
+    e_hours, f_hours = {}, {}
+    for h in hours:
+        M = sum(m for (st, hh), (m, c) in hourly.items() if hh == h)
+        C = sum(c for (st, hh), (m, c) in hourly.items() if hh == h)
+        if C > 0:
+            e_hours[h] = (M - C) / C
+            f_hours[h] = geh(M, C)
+    if e_hours:
+        worst_e = max(e_hours.values(), key=abs)
+        worst_f = max(f_hours.values())
+        out["E_sum_within5pct_perhour"] = (abs(worst_e) <= 0.05, worst_e)
+        out["F_sum_geh4_perhour"] = (worst_f < 4, worst_f)
+        out["EF_perhour_detail"] = (True, {h: (round(e_hours[h], 4),
+                                               round(f_hours[h], 2))
+                                           for h in sorted(e_hours)})
+    else:
+        out["E_sum_within5pct_perhour"] = (False, None)
+        out["F_sum_geh4_perhour"] = (False, None)
     return out

@@ -52,5 +52,27 @@ def test_fhwa_sum_checks():
     g = metrics.station_hour_geh(sim, obs, ["s1"], hours=[5])
     out = metrics.fhwa_2004_criteria(g, sim, obs, ["s1"], hours=[5])
     assert out["A_geh5_85pct"][0] is True
-    assert out["E_sum_within5pct"][0] is True
-    assert out["F_sum_geh4"][0] is True
+    assert out["E_sum_within5pct_perhour"][0] is True
+    assert out["F_sum_geh4_perhour"][0] is True
+    assert out["EF_perhour_detail"][1][5] == (0.0, 0.0)
+
+
+def test_fhwa_perhour_no_cancellation():
+    # +20% in h5, -20% in h6: pooled would pass 5%; per-hour must fail
+    t5 = (5 - 4) * 3600 - 1800
+    t6 = (6 - 4) * 3600 - 1800
+    obs = {("s1", t5 + i * 300): 100.0 for i in range(12)}
+    obs.update({("s1", t6 + i * 300): 100.0 for i in range(12)})
+    sim = {("s1", t5 + i * 300): 120.0 for i in range(12)}
+    sim.update({("s1", t6 + i * 300): 80.0 for i in range(12)})
+    g = metrics.station_hour_geh(sim, obs, ["s1"], hours=[5, 6])
+    out = metrics.fhwa_2004_criteria(g, sim, obs, ["s1"], hours=[5, 6])
+    assert out["E_sum_within5pct_perhour"][0] is False
+    assert abs(out["E_sum_within5pct_perhour"][1]) == pytest.approx(0.2)
+
+
+def test_hourly_flows_scales_partial():
+    t5 = (5 - 4) * 3600 - 1800
+    series = {t5 + i * 300: 100.0 for i in range(6)}   # 6 of 12 bins
+    v, n = metrics.hourly_flows(series.get, 5)
+    assert n == 6 and v == pytest.approx(1200.0)       # scaled to veh/h
