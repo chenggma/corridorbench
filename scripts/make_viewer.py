@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Generate docs/viewer.html: a single-file static corridor viewer
+"""Generate docs/viewer.html: a single-file static corridor viewer.
+
+PUBLIC-SET TRANSPARENCY VIEW: published baseline diagnostics on the
+canonical day. The v0.1 public set is fully transparent by design
+(sealed-track integrity comes from operator hosting + future days,
+not from hiding this file); episode visibility contracts forbid
+agents from reading docs/ regardless.
 (ARC-2019 convention: the whole front-end is one HTML file).
 
 Shows, per direction: the station ladder (Abs_PM order) with per-hour

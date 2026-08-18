@@ -116,6 +116,10 @@ def main(workers=2, only=None):
         work = os.path.join(run_dir, "work")
         res = adapter.run(spec, work)
         serialize(run_dir, res.flow, res.speed, res.stats)
+        # purge the workdir: turns files permit algebraic recovery of
+        # observations (p = FR/ML_obs), flows replay measured inflows
+        import shutil
+        shutil.rmtree(work, ignore_errors=True)
         return tag, day, res.stats, run_dir
 
     t0 = time.time()

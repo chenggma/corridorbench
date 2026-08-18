@@ -11,8 +11,13 @@ from corridorbench import paths, scoring, taskset, metrics
 FROZEN = os.path.join(paths.TWIN, "results", "detectors.out.xml")
 SM = os.path.join(paths.TWIN, "results", "station_metrics.csv")
 
+_strict = os.environ.get("CORRIDORBENCH_STRICT") == "1"
+if _strict and not os.path.exists(FROZEN):
+    raise RuntimeError("STRICT mode: frozen baseline missing — the "
+                       "reproduction gate cannot run")
 pytestmark = pytest.mark.skipif(not os.path.exists(FROZEN),
-                                reason="frozen baseline not present")
+                                reason="frozen baseline not present "
+                                       "(set CORRIDORBENCH_STRICT=1 to fail)")
 
 
 @pytest.fixture(scope="module")
