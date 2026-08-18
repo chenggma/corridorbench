@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+results/campaign/*/work/
+episodes/*/work_*
+.env.paths
