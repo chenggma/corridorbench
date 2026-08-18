@@ -12,11 +12,23 @@ import os
 import sys
 
 HOME = os.path.expanduser("~")
-RS = os.path.join(HOME, "Downloads", "RoamingSim-Amptrans")
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_UPSTREAM = os.path.join(HOME, "Downloads", "RoamingSim-Amptrans")
+_VENDORED = os.path.join(REPO, "data", "vendored")
+# Prefer the original upstream tree when present (developer machine);
+# fall back to the vendored mirror shipped in this repository
+# (data/vendored/, sha256 manifest in PROVENANCE.json) so the
+# benchmark is self-contained for everyone else.
+RS = _UPSTREAM if os.path.exists(
+    os.path.join(_UPSTREAM, "demos", "demo_d_sumo_twin", "net",
+                 "i710_twin.net.xml")) else _VENDORED
 TWIN = os.path.join(RS, "demos", "demo_d_sumo_twin")
 STAGE0 = os.path.join(RS, "la_network", "calibration", "stage0")
-SUMO_BIN = os.path.join(TWIN, ".venv", "bin")
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# SUMO binaries: the demo venv when present, else whatever is on PATH
+# (pip install eclipse-sumo provides sumo/jtrrouter)
+_DEMO_BIN = os.path.join(_UPSTREAM, "demos", "demo_d_sumo_twin",
+                         ".venv", "bin")
+SUMO_BIN = _DEMO_BIN if os.path.exists(os.path.join(_DEMO_BIN, "sumo"))     else ""
 RESULTS = os.path.join(REPO, "results")
 EPISODES = os.path.join(REPO, "episodes")
 

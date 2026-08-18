@@ -1,0 +1,542 @@
+{
+ "N": {
+  "dir": "N",
+  "entry": "768984",
+  "exit": "776203",
+  "pm_entry": 11.54,
+  "stations": [
+   {
+    "station": "768984",
+    "abs_pm": 11.54,
+    "s": 300.0,
+    "lanes": 5,
+    "det_edge": "N_ml_000",
+    "boundary_input": true,
+    "through_edge": "N_ml_001"
+   },
+   {
+    "station": "718151",
+    "abs_pm": 11.907,
+    "s": 890.6292480000014,
+    "lanes": 5,
+    "det_edge": "N_ml_002",
+    "boundary_input": false,
+    "through_edge": "N_ml_003"
+   },
+   {
+    "station": "717983",
+    "abs_pm": 12.057,
+    "s": 1132.0308480000022,
+    "lanes": 4,
+    "det_edge": "N_ml_006",
+    "boundary_input": false,
+    "through_edge": "N_ml_007"
+   },
+   {
+    "station": "774359",
+    "abs_pm": 12.707,
+    "s": 2178.104448000003,
+    "lanes": 4,
+    "det_edge": "N_ml_009",
+    "boundary_input": false,
+    "through_edge": "N_ml_010"
+   },
+   {
+    "station": "717992",
+    "abs_pm": 13.427,
+    "s": 3336.832128000001,
+    "lanes": 4,
+    "det_edge": "N_ml_011",
+    "boundary_input": false,
+    "through_edge": "N_ml_012"
+   },
+   {
+    "station": "717995",
+    "abs_pm": 13.517,
+    "s": 3481.6730880000005,
+    "lanes": 4,
+    "det_edge": "N_ml_014",
+    "boundary_input": false,
+    "through_edge": "N_ml_015"
+   },
+   {
+    "station": "776266",
+    "abs_pm": 14.507,
+    "s": 5074.923648000001,
+    "lanes": 4,
+    "det_edge": "N_ml_018",
+    "boundary_input": false,
+    "through_edge": "N_ml_019"
+   },
+   {
+    "station": "718147",
+    "abs_pm": 14.767,
+    "s": 5493.353088000001,
+    "lanes": 4,
+    "det_edge": "N_ml_022",
+    "boundary_input": false,
+    "through_edge": "N_ml_023"
+   },
+   {
+    "station": "776290",
+    "abs_pm": 16.687,
+    "s": 8583.293568000003,
+    "lanes": 4,
+    "det_edge": "N_ml_025",
+    "boundary_input": false,
+    "through_edge": "N_ml_026"
+   },
+   {
+    "station": "718320",
+    "abs_pm": 17.147,
+    "s": 9323.591808,
+    "lanes": 4,
+    "det_edge": "N_ml_027",
+    "boundary_input": false,
+    "through_edge": "N_ml_028"
+   },
+   {
+    "station": "776493",
+    "abs_pm": 17.547,
+    "s": 9967.329408000003,
+    "lanes": 5,
+    "det_edge": "N_ml_031",
+    "boundary_input": false,
+    "through_edge": "N_ml_032"
+   },
+   {
+    "station": "776203",
+    "abs_pm": 17.607,
+    "s": 10063.890048000001,
+    "lanes": 6,
+    "det_edge": "N_ml_033",
+    "boundary_input": false,
+    "through_edge": "N_ml_034"
+   }
+  ],
+  "on_ramps": [
+   {
+    "station": "716858",
+    "abs_pm": 11.907,
+    "s": 950.6292480000014,
+    "edge": "N_on_716858",
+    "alive": true,
+    "name": "IMPERIAL EB"
+   },
+   {
+    "station": "716861",
+    "abs_pm": 12.057,
+    "s": 1192.0308480000022,
+    "edge": "N_on_716861",
+    "alive": true,
+    "name": "IMPERIAL WB"
+   },
+   {
+    "station": "716862",
+    "abs_pm": 13.427,
+    "s": 3396.832128000001,
+    "edge": "N_on_716862",
+    "alive": true,
+    "name": "FIRESTONE EB"
+   },
+   {
+    "station": "716864",
+    "abs_pm": 13.517,
+    "s": 3541.6730880000005,
+    "edge": "N_on_716864",
+    "alive": false,
+    "name": "FIRESTONE WB"
+   },
+   {
+    "station": "716866",
+    "abs_pm": 14.507,
+    "s": 5134.923648000001,
+    "edge": "N_on_716866",
+    "alive": false,
+    "name": "FLORENCE EB"
+   },
+   {
+    "station": "718004",
+    "abs_pm": 14.767,
+    "s": 5553.353088000001,
+    "edge": "N_on_718004",
+    "alive": true,
+    "name": "FLORENCE WB"
+   },
+   {
+    "station": "716869",
+    "abs_pm": 17.147,
+    "s": 9383.591808,
+    "edge": "N_on_716869",
+    "alive": false,
+    "name": "ATLANTIC NB"
+   },
+   {
+    "station": "716871",
+    "abs_pm": 17.547,
+    "s": 10027.329408000003,
+    "edge": "N_on_716871",
+    "alive": false,
+    "name": "WASHINGTON"
+   }
+  ],
+  "off_ramps": [
+   {
+    "station": "718477",
+    "abs_pm": 11.907,
+    "s": 830.6292480000014,
+    "edge": "N_off_718477",
+    "from_edge": "N_ml_001",
+    "through_edge": "N_ml_002",
+    "alive": true,
+    "name": "IMPERIAL EB"
+   },
+   {
+    "station": "717982",
+    "abs_pm": 12.057,
+    "s": 1072.0308480000022,
+    "edge": "N_off_717982",
+    "from_edge": "N_ml_005",
+    "through_edge": "N_ml_006",
+    "alive": true,
+    "name": "IMPERIAL WB"
+   },
+   {
+    "station": "717991",
+    "abs_pm": 13.427,
+    "s": 3276.832128000001,
+    "edge": "N_off_717991",
+    "from_edge": "N_ml_010",
+    "through_edge": "N_ml_011",
+    "alive": true,
+    "name": "FIRESTONE EB"
+   },
+   {
+    "station": "717994",
+    "abs_pm": 13.517,
+    "s": 3421.6730880000005,
+    "edge": "N_off_717994",
+    "from_edge": "N_ml_013",
+    "through_edge": "N_ml_014",
+    "alive": false,
+    "name": "FIRESTONE WB"
+   },
+   {
+    "station": "717999",
+    "abs_pm": 14.507,
+    "s": 5014.923648000001,
+    "edge": "N_off_717999",
+    "from_edge": "N_ml_017",
+    "through_edge": "N_ml_018",
+    "alive": false,
+    "name": "FLORENCE EB"
+   },
+   {
+    "station": "718005",
+    "abs_pm": 14.767,
+    "s": 5433.353088000001,
+    "edge": "N_off_718005",
+    "from_edge": "N_ml_021",
+    "through_edge": "N_ml_022",
+    "alive": true,
+    "name": "FLORENCE WB"
+   },
+   {
+    "station": "718494",
+    "abs_pm": 17.067,
+    "s": 9134.844288000002,
+    "edge": "N_off_718494",
+    "from_edge": "N_ml_026",
+    "through_edge": "N_ml_027",
+    "alive": false,
+    "name": "ATLANTIC NB"
+   },
+   {
+    "station": "718009",
+    "abs_pm": 17.547,
+    "s": 9907.329408000003,
+    "edge": "N_off_718009",
+    "from_edge": "N_ml_030",
+    "through_edge": "N_ml_031",
+    "alive": true,
+    "name": "WASHINGTON"
+   }
+  ],
+  "skipped_dead_connectors": [],
+  "source_edge": "N_ml_000",
+  "sink_edge": "N_ml_034",
+  "length_m": 10363.890048000001
+ },
+ "S": {
+  "dir": "S",
+  "entry": "776208",
+  "exit": "716857",
+  "pm_entry": 17.607,
+  "stations": [
+   {
+    "station": "776208",
+    "abs_pm": 17.607,
+    "s": 300.0,
+    "lanes": 4,
+    "det_edge": "S_ml_000",
+    "boundary_input": true,
+    "through_edge": "S_ml_001"
+   },
+   {
+    "station": "718012",
+    "abs_pm": 17.537,
+    "s": 412.6540800000005,
+    "lanes": 4,
+    "det_edge": "S_ml_002",
+    "boundary_input": false,
+    "through_edge": "S_ml_003"
+   },
+   {
+    "station": "718008",
+    "abs_pm": 16.887,
+    "s": 1458.7276799999981,
+    "lanes": 5,
+    "det_edge": "S_ml_008",
+    "boundary_input": false,
+    "through_edge": "S_ml_009"
+   },
+   {
+    "station": "776289",
+    "abs_pm": 16.687,
+    "s": 1780.596479999997,
+    "lanes": 4,
+    "det_edge": "S_ml_009",
+    "boundary_input": false,
+    "through_edge": "S_ml_010"
+   },
+   {
+    "station": "718002",
+    "abs_pm": 14.597,
+    "s": 5144.12544,
+    "lanes": 4,
+    "det_edge": "S_ml_015",
+    "boundary_input": false,
+    "through_edge": "S_ml_016"
+   },
+   {
+    "station": "776295",
+    "abs_pm": 14.507,
+    "s": 5288.966399999999,
+    "lanes": 4,
+    "det_edge": "S_ml_017",
+    "boundary_input": false,
+    "through_edge": "S_ml_018"
+   },
+   {
+    "station": "717989",
+    "abs_pm": 13.517,
+    "s": 6882.21696,
+    "lanes": 4,
+    "det_edge": "S_ml_021",
+    "boundary_input": false,
+    "through_edge": "S_ml_022"
+   },
+   {
+    "station": "717986",
+    "abs_pm": 13.427,
+    "s": 7027.05792,
+    "lanes": 4,
+    "det_edge": "S_ml_024",
+    "boundary_input": false,
+    "through_edge": "S_ml_025"
+   },
+   {
+    "station": "774358",
+    "abs_pm": 12.707,
+    "s": 8185.785599999998,
+    "lanes": 4,
+    "det_edge": "S_ml_027",
+    "boundary_input": false,
+    "through_edge": "S_ml_028"
+   },
+   {
+    "station": "761776",
+    "abs_pm": 11.987,
+    "s": 9344.51328,
+    "lanes": 4,
+    "det_edge": "S_ml_028",
+    "boundary_input": false,
+    "through_edge": "S_ml_029"
+   },
+   {
+    "station": "717980",
+    "abs_pm": 11.927,
+    "s": 9441.07392,
+    "lanes": 5,
+    "det_edge": "S_ml_031",
+    "boundary_input": false,
+    "through_edge": "S_ml_032"
+   },
+   {
+    "station": "716857",
+    "abs_pm": 11.54,
+    "s": 10063.890048000001,
+    "lanes": 4,
+    "det_edge": "S_ml_034",
+    "boundary_input": false,
+    "through_edge": "S_ml_035"
+   }
+  ],
+  "on_ramps": [
+   {
+    "station": "716870",
+    "abs_pm": 17.537,
+    "s": 472.6540800000005,
+    "edge": "S_on_716870",
+    "alive": true,
+    "name": "WASHINGTON"
+   },
+   {
+    "station": "716868",
+    "abs_pm": 16.957,
+    "s": 1406.0735999999977,
+    "edge": "S_on_716868",
+    "alive": false,
+    "name": "ATLANTIC SB"
+   },
+   {
+    "station": "761790",
+    "abs_pm": 16.687,
+    "s": 1840.596479999997,
+    "edge": "S_on_761790",
+    "alive": false,
+    "name": "ATLANTIC NB"
+   },
+   {
+    "station": "716867",
+    "abs_pm": 14.767,
+    "s": 4930.53696,
+    "edge": "S_on_716867",
+    "alive": false,
+    "name": "FLORENCE WB"
+   },
+   {
+    "station": "717997",
+    "abs_pm": 14.307,
+    "s": 5670.835199999999,
+    "edge": "S_on_717997",
+    "alive": true,
+    "name": "FLORENCE EB"
+   },
+   {
+    "station": "716865",
+    "abs_pm": 13.517,
+    "s": 6942.21696,
+    "edge": "S_on_716865",
+    "alive": true,
+    "name": "FIRESTONE WB"
+   },
+   {
+    "station": "716863",
+    "abs_pm": 13.427,
+    "s": 7087.05792,
+    "edge": "S_on_716863",
+    "alive": true,
+    "name": "FIRESTONE EB"
+   },
+   {
+    "station": "716860",
+    "abs_pm": 11.987,
+    "s": 9404.51328,
+    "edge": "S_on_716860",
+    "alive": true,
+    "name": "IMPERIAL WB"
+   },
+   {
+    "station": "716859",
+    "abs_pm": 11.927,
+    "s": 9501.07392,
+    "edge": "S_on_716859",
+    "alive": false,
+    "name": "IMPERIAL EB"
+   }
+  ],
+  "off_ramps": [
+   {
+    "station": "718011",
+    "abs_pm": 17.537,
+    "s": 352.6540800000005,
+    "edge": "S_off_718011",
+    "from_edge": "S_ml_001",
+    "through_edge": "S_ml_002",
+    "alive": true,
+    "name": "WASHINGTON"
+   },
+   {
+    "station": "718007",
+    "abs_pm": 16.957,
+    "s": 1286.0735999999977,
+    "edge": "S_off_718007",
+    "from_edge": "S_ml_005",
+    "through_edge": "S_ml_006",
+    "alive": false,
+    "name": "ATLANTIC SB"
+   },
+   {
+    "station": "718001",
+    "abs_pm": 14.767,
+    "s": 4810.53696,
+    "edge": "S_off_718001",
+    "from_edge": "S_ml_012",
+    "through_edge": "S_ml_013",
+    "alive": false,
+    "name": "FLORENCE WB"
+   },
+   {
+    "station": "717998",
+    "abs_pm": 14.507,
+    "s": 5228.966399999999,
+    "edge": "S_off_717998",
+    "from_edge": "S_ml_016",
+    "through_edge": "S_ml_017",
+    "alive": true,
+    "name": "FLORENCE EB"
+   },
+   {
+    "station": "717988",
+    "abs_pm": 13.517,
+    "s": 6822.21696,
+    "edge": "S_off_717988",
+    "from_edge": "S_ml_020",
+    "through_edge": "S_ml_021",
+    "alive": false,
+    "name": "FIRESTONE WB"
+   },
+   {
+    "station": "717985",
+    "abs_pm": 13.427,
+    "s": 6967.05792,
+    "edge": "S_off_717985",
+    "from_edge": "S_ml_023",
+    "through_edge": "S_ml_024",
+    "alive": false,
+    "name": "FIRESTONE EB"
+   },
+   {
+    "station": "761778",
+    "abs_pm": 11.927,
+    "s": 9381.07392,
+    "edge": "S_off_761778",
+    "from_edge": "S_ml_029",
+    "through_edge": "S_ml_030",
+    "alive": false,
+    "name": "IMPERIAL EB"
+   }
+  ],
+  "skipped_dead_connectors": [
+   {
+    "station": "717979",
+    "type": "CD",
+    "abs_pm": "11.927"
+   }
+  ],
+  "source_edge": "S_ml_000",
+  "sink_edge": "S_ml_035",
+  "length_m": 10363.890048000001
+ }
+}

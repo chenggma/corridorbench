@@ -1,0 +1,27 @@
+{
+ "source": "~/Downloads/RoamingSim-Amptrans (see upstream PROVENANCE.md files; PeMS D07 official text files, extraction scripts in upstream repo github.com/chenggma/corridor-twin)",
+ "vendored_utc": "2026-08-18",
+ "sha256": {
+  "la_network/calibration/ramp_boundaries_2026-06-02_N.csv": "6e2d4411e9f7fb82f31fbd46f8f027978552dd1d99d48264733b02fbc9fda398",
+  "la_network/calibration/ramp_boundaries_2026-06-02_S.csv": "483aebfd659a6a6a78578f936df35396bf48cf12a3c83f0052da4ac41a173105",
+  "la_network/calibration/ramp_boundaries_2026-06-03_N.csv": "dd01b3d8af35229e1440a14b7988c6055f3f48755d2277e4deddf8fd67f8a62b",
+  "la_network/calibration/ramp_boundaries_2026-06-03_S.csv": "790783a34641c78037be61bf41d19befae7518334547a6622f55855c6498131a",
+  "la_network/calibration/ramp_boundaries_2026-06-04_N.csv": "cd928807cca9553862d0acc91601cd90983081155b7257aa99fc653929385dfe",
+  "la_network/calibration/ramp_boundaries_2026-06-04_S.csv": "8a27ee1854db1b0fdff72b1c298fbe37665ef37049a4bfad4d62f93e7ca40100",
+  "la_network/calibration/ramp_inventory.csv": "d8a4311a82c4137ea2212990a9850bcb0211699e8d382b74003e712208495cdd",
+  "la_network/calibration/stage0/harness.py": "9c90498474a88e1b36dbf687867a31c886e4d1b604b24252db2cd36e17959534",
+  "la_network/calibration/stage0/params_calibrated.json": "e37874c199ee91c50b8e271d68653bdcd7ec6e7f6b22c49937a52c5bb5c68d8d",
+  "la_network/calibration/stage0/station_metrics_calibrated_2026-06-03.csv": "10b539b617cd01cd07b07a2b209287410de9cfea3cc2e8ba11ec32d4f3c2359a",
+  "la_network/calibration/stage0/sumo_adapter.py": "1ff03401ae243774dc09d11466af7585eb69e0ca1941c737128bc54b31e71f94",
+  "la_network/calibration/stage0/data/obs_ml_flow_2026-06-02.csv": "e29a74d7eccdce7d353ea4ec112e7c0e4cf80d561ab747752493955ea23ce927",
+  "la_network/calibration/stage0/data/obs_ml_flow_2026-06-03.csv": "e428696939f06a8e7a1bfe7d8e41d9a82db8697e74338154da86cba495776b43",
+  "la_network/calibration/stage0/data/obs_ml_flow_2026-06-04.csv": "2b9295756489c62695fada16887d3d0522da7953754d968b457b4ddc90063974",
+  "la_network/calibration/stage0/data/obs_ml_speed_2026-06-02.csv": "5a250454dc8e397cc36d40580ac27191ec6bab1643c12230a54f2f40ee934ce7",
+  "la_network/calibration/stage0/data/obs_ml_speed_2026-06-03.csv": "bf22a706bdfc8281e9d3737ddd6095a49dae33d681bf3727bcb6e580c9ecb0b7",
+  "la_network/calibration/stage0/data/obs_ml_speed_2026-06-04.csv": "06ee234265a8c6c7d8dfc3fcc4ffee02806efbf6418095fcbab5db2d8284dabe",
+  "demos/demo_d_sumo_twin/net/detectors.add.xml": "ea3203dce97d0cad79d39ecfb4f82188a5ced3ade6cf34b9845079aa072f597f",
+  "demos/demo_d_sumo_twin/net/i710_twin.net.xml": "7319d852a5b3c588b9833edadf2246ca5a190e6168b015e8961f03b6797418b5",
+  "demos/demo_d_sumo_twin/net/manifest.json": "fcca51e1ae98609279472083e79b6b9bad3d55e4684102a034df3f54902e2ea4",
+  "demos/demo_d_sumo_twin/data/ml_stations.csv": "00bc63bb5807fa12400e5936271c09073c8088dbe8d6ea04c8ce5b270fa123f0"
+ }
+}
