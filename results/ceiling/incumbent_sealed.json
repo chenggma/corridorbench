@@ -1,0 +1,10 @@
+{
+ "i710-N-hold0603": {
+  "sealed_cov": 0.2424,
+  "mean_geh": 12.11
+ },
+ "i710-S-hold0603": {
+  "sealed_cov": 0.3939,
+  "mean_geh": 10.06
+ }
+}
